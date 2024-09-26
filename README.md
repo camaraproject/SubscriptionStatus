@@ -7,7 +7,7 @@
 <a href="https://github.com/camaraproject/SubscriptionStatus/releases/latest" title="Latest Release"><img src="https://img.shields.io/github/release/camaraproject/SubscriptionStatus?style=plastic"></a>
 
 # SubscriptionStatus
-Repository to describe, develop, document, and test the SubscriptionStatus API within the Sub Project [KnowYourCustomer](https://wiki.camaraproject.org/x/8AKeAQ) of CAMARA
+Repository to describe, develop, document, and test the SubscriptionStatus API within the Sub Project [KnowYourCustomer](https://lf-camaraproject.atlassian.net/wiki/x/BjPe) of CAMARA
 
 ## Scope
 
@@ -30,7 +30,7 @@ The repository has no (pre)releases yet, work in progress is within the main bra
 * Meetings of Sub Project KnowYourCustomer are held virtually 
     * Schedule: Bi-weekly, Tuesday, 09:00 CEST (07:00 UTC)
     * [Registration / Join](https://zoom-lfx.platform.linuxfoundation.org/meeting/96235150735?password=7e3fea67-a76e-4941-8a70-392cf5545917)
-    * Minutes: Access [meeting minutes](https://wiki.camaraproject.org/display/CAM/KnowYourCustomer+Meeting+Minutes)
+    * Minutes: Access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/x/BjPe)
 * Mailing List
     * Subscribe / Unsubscribe to the mailing list of this Sub Project <https://lists.camaraproject.org/g/sp-kyc>.
     * A message to the community of this Sub Project can be sent using <sp-kyc@lists.camaraproject.org>.
