@@ -1,5 +1,6 @@
 | Org                    | Name                   | GitHub Username             |
 | -----------------------| -----------------------|-----------------------------|
-| China Unicom | Shuoran Zhao | Ryaaan308 |
+| China Unicom | Fan Yang | chinaunicomyangfan |
 | China Telecom | Dan Xu | DanXu-ChinaTelecom |
-| Huawei | Jin Xu | philipxujin |
+| Huawei | Jia Wang | ClownsAlbert |
+| Huawei | Chuanyu Chen | ChuanyuChen |
