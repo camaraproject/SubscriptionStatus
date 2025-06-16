@@ -9,7 +9,7 @@
 
 # SubscriptionStatus
 
-Repository to describe, develop, document, and test the SubscriptionStatus Service API within the Sub Project [Know Your Customer](https://lf-camaraproject.atlassian.net/wiki/x/I4DGB) of CAMARA
+Sandbox API Repository to describe, develop, document, and test the SubscriptionStatus Service API within the Sub Project [Know Your Customer](https://lf-camaraproject.atlassian.net/wiki/x/I4DGB) of CAMARA
 
 * API Repository [wiki page](https://lf-camaraproject.atlassian.net/wiki/x/hACbBQ)
 
