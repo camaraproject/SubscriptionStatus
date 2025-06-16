@@ -5,9 +5,13 @@
 <a href="https://github.com/camaraproject/SubscriptionStatus" title="Repo Size"><img src="https://img.shields.io/github/repo-size/camaraproject/SubscriptionStatus?style=plastic"></a>
 <a href="https://github.com/camaraproject/SubscriptionStatus/blob/main/LICENSE" title="License"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg?style=plastic"></a>
 <a href="https://github.com/camaraproject/SubscriptionStatus/releases/latest" title="Latest Release"><img src="https://img.shields.io/github/release/camaraproject/SubscriptionStatus?style=plastic"></a>
+<a href="https://github.com/camaraproject/Governance/blob/main/ProjectStructureAndRoles.md" title="Sandbox API Repository"><img src="https://img.shields.io/badge/Sandbox%20API%20Repository-yellow?style=plastic"></a>
 
 # SubscriptionStatus
-Repository to describe, develop, document, and test the SubscriptionStatus API within the Sub Project [KnowYourCustomer](https://lf-camaraproject.atlassian.net/wiki/x/BjPe) of CAMARA
+
+Repository to describe, develop, document, and test the SubscriptionStatus Service API within the Sub Project [Know Your Customer](https://lf-camaraproject.atlassian.net/wiki/x/I4DGB) of CAMARA
+
+* API Repository [wiki page](https://lf-camaraproject.atlassian.net/wiki/x/hACbBQ)
 
 ## Scope
 
