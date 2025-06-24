@@ -21,7 +21,7 @@ info:
     It helps verify whether telecommunication services are active or suspended for fraud prevention, customer support, and operational checks.
 
     **Scenario 1 - Payment System Validation**:
-      * A financial service provider uses this API to validate if a user's phone number has active voice/SMS services before processing high-risk transactions. If the API returns "suspended" for Voice/SMS inbound, the transaction is flagged for manual review to prevent fraud or invalid transfers.
+      * A financial service provider uses this API to validate if a user's phone number has active voice/SMS services and data service before processing high-risk transactions. If the API returns "suspended" any of the three attributes of voice/SMS inbound, voice/SMS outbound, and data services status, the transaction is flagged for manual review to prevent fraud or invalid transfers.
     
     **Scenario 2 - Customer Service Troubleshooting**:
       * A user reports inability to receive calls. Customer support queries the API and identifies that "Voice/SMS inbound" is suspended. The customer service personnel guides the user to reactivate the service, resolving the issue.
