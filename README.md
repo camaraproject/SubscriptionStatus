@@ -35,7 +35,7 @@ The repository has no (pre)releases yet, work in progress is within the main bra
   [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
   [[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
 
-* For changes see [CHANGELOG.md](https://github.com/camaraproject/RegionDeviceCount/blob/main/CHANGELOG.md)
+* For changes see [CHANGELOG.md](https://github.com/camaraproject/SubscriptionStatus/blob/main/CHANGELOG.md)
 
 ## Contributing
 * Meetings of Sub Project KnowYourCustomer are held virtually 
