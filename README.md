@@ -17,7 +17,7 @@ Sandbox API Repository to describe, develop, document, and test the Subscription
 
 * Service API “SubscriptionStatus” (see [APIBacklog.md](https://github.com/camaraproject/APIBacklog/blob/main/documentation/APIbacklog.md))
 * The API provides the customer with the ability to:  
-  * obtain the current subscription status of a certain phone number, including the subscription of Voice/SMS in, Voice/SMS out, and data service
+  * obtain the current subscription status of a certain phone number, including the subscription of Voice/SMS Inbound, Voice/SMS Outbound, and Data Service Status
 * Describe, develop, document, and test the APIs
 * Started: August 2024
 
@@ -29,6 +29,13 @@ The repository has no (pre)releases yet, work in progress is within the main bra
 <!-- Pre-releases of this sub project are available in https://github.com/camaraproject/SubscriptionStatus/releases -->
 <!-- The latest public release is available here: https://github.com/camaraproject/SubscriptionStatus/releases/latest -->
 <!-- For changes see [CHANGELOG.md](https://github.com/camaraproject/SubscriptionStatus/blob/main/CHANGELOG.md) -->
+
+ * `NEW`: Pre-release r1.1 with version 0.1.0-rc.1 of the API subscription-status is available [here](https://github.com/camaraproject/SubscriptionStatus/tree/r1.1).
+  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.1/code/API_definitions/subscription-status.yaml)
+  [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
+  [[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
+
+* For changes see [CHANGELOG.md](https://github.com/camaraproject/RegionDeviceCount/blob/main/CHANGELOG.md)
 
 ## Contributing
 * Meetings of Sub Project KnowYourCustomer are held virtually 
