@@ -2,10 +2,10 @@ openapi: 3.0.3
 info:
   title: SubscriptionStatus
   description: |
-    This API allows users to obtain the current subscription status of a phone number, including Voice/SMS inbound, Voice/SMS outbound, and data service status. 
+    This API allows users to obtain the current subscription status of a phone number, including Voice/SMS inbound, Voice/SMS outbound, and data service status.
 
     # Introduction
-    
+
     This API obtains the business subscription status of a phone number by passing it in, including Voice/SMS inbound, Voice/SMS outbound, and data service status.
 
     Normally, the business subscription status is active, and the following situations may lead to abnormal business subscription status.
@@ -19,7 +19,7 @@ info:
     **Abnormal usage behavior**: High frequency outgoing calls, long-distance roaming, sensitive period communication, and other behaviors may be detected by the operator's risk control system, which may lead to service suspension.
 
     It helps verify whether telecommunication services are active or suspended for fraud prevention, customer support, and operational checks.
-    
+
     **Scenario 1 - Payment System Validation**:
       * A financial service provider uses this API to validate if a user's phone number has active voice/SMS services before processing high-risk transactions. If the API returns "suspended" for Voice/SMS inbound, the transaction is flagged for manual review to prevent fraud or invalid transfers.
     
@@ -27,24 +27,24 @@ info:
       * The user reported that they were unable to receive calls. Customer support queries the API and identifies that "Voice/SMS inbound" is suspended. 
       * The user reported that they were unable to make a phone call. Customer support queries API and confirms that 'voice/SMS outbound' is suspended
       * The user reported that they are unable to use the data service.Customer support queries API and confirms that 'data service status' is suspended
-      
-        The customer service personnel guides the user to reactivate the service, resolving the issue.
-        
+
+      The customer service personnel guides the user to reactivate the service, resolving the issue.
+
     # Relevant terms and definitions
-    - **Voice/SMS Inbound**  
-      Indicates the ability of the subscriber to **receive** incoming voice calls and SMS messages.  
-      - `active`: The subscriber can receive calls and SMS normally.  
+    - **Voice/SMS Inbound**
+      Indicates the ability of the subscriber to **receive** incoming voice calls and SMS messages.
+      - `active`: The subscriber can receive calls and SMS normally.
       - `suspended`: The subscriber is blocked from receiving calls/SMS (e.g., due to account suspension).
 
-    - **Voice/SMS Outbound**  
-      Indicates the ability of the subscriber to **initiate** outgoing voice calls and send SMS messages.  
-      - `active`: The subscriber can make calls and send SMS normally.  
+    - **Voice/SMS Outbound**
+      Indicates the ability of the subscriber to **initiate** outgoing voice calls and send SMS messages.
+      - `active`: The subscriber can make calls and send SMS normally. 
       - `suspended`: The subscriber is blocked from initiating calls/SMS (e.g., due to unpaid bills or fraud restrictions).
 
-    - **Data Service Status**  
-      Indicates the availability and performance level of mobile data connectivity.  
-      - `active`: Full-speed data access is enabled.  
-      - `suspended`: Data service is completely disabled (e.g., due to contract expiration).  
+    - **Data Service Status** 
+      Indicates the availability and performance level of mobile data connectivity. 
+      - `active`: Full-speed data access is enabled. 
+      - `suspended`: Data service is completely disabled (e.g., due to contract expiration). 
       - `throttled`: Data service is available but speed is reduced (e.g., after exceeding usage limits).
 
     # Identifying the phoneNumber from the access token
@@ -57,7 +57,6 @@ info:
 
     - If the subject cannot be identified from the access token and the optional phoneNumber field is not included in the request, then the server will return an error with the `422 MISSING_IDENTIFIER` error code. This is an error typically, but not uniquely, returned in 2-legged scenarios when the access token doesn't identify a single subscription.
     - If there is a mismatch between the provided phone number in the request body and the phone number associated with the access token, the server will return an error with the `403 INVALID_TOKEN_CONTEXT` error code.
-  
   version: wip
   x-camara-commonalities: 0.5
   license:
@@ -93,7 +92,7 @@ paths:
               Three-Legged Without Phone Number Example:
                 value: {}
               Two-Legged and Three-leg Access Token Example:
-                value: 
+                value:
                   phoneNumber: "+346661113334"
       responses:
         "200":
@@ -290,7 +289,7 @@ components:
               value:
                 status: 403
                 code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
-                message: The idDocument needs to match the one associated with the provided phoneNumber 
+                message: The idDocument needs to match the one associated with the provided phoneNumber
 
     Generic404:
       description: Not found
