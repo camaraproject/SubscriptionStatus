@@ -308,14 +308,8 @@ components:
                       - 404
                   code:
                     enum:
-                      - NOT_FOUND
                       - IDENTIFIER_NOT_FOUND
           examples:
-            GENERIC_404_NOT_FOUND:
-              description: Resource is not found
-              value:
-                status: 404
-                code: NOT_FOUND
             GENERIC_404_IDENTIFIER_NOT_FOUND:
               description: The phone number is not associated with a CSP customer account
               value:
