@@ -20,7 +20,7 @@ This release contains the definition and documentation of
 * subscription-status v0.1.0-rc.1
 
 The API definition(s) are based on
-* Commonalities v0.6.0
+* Commonalities v0.6.0-rc.1
 * Identity and Consent Management v0.4.0
 
 
