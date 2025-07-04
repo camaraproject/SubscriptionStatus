@@ -35,7 +35,7 @@ The API definition(s) are based on
 [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
 [[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
 
-**Initial contribution of API definitions for Subscription Status**, including initial documentation and implementation code.
+**Initial contribution of API definitions for Subscription Status**, including initial documentation.
 
 ## What's Changed
 * Initial yaml file including Subscription Status API by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/6
