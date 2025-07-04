@@ -261,8 +261,6 @@ components:
                     enum:
                       - PERMISSION_DENIED
                       - INVALID_TOKEN_CONTEXT
-                      - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED
-                      - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
           examples:
             GENERIC_403_PERMISSION_DENIED:
               description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
@@ -276,18 +274,6 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 message: "phoneNumber is not consistent with access token."
-            KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED:
-              description: The idDocument is required by the implementation
-              value:
-                status: 403
-                code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED
-                message: The idDocument is required to perform the properties validation
-            KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH:
-              description: idDocument mismatch
-              value:
-                status: 403
-                code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
-                message: The idDocument needs to match the one associated with the provided phoneNumber
 
     Generic404:
       description: Not found
