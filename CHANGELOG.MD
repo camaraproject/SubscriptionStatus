@@ -37,10 +37,13 @@ The API definition(s) are based on
 
 **Initial contribution of API definitions for Subscription Status**, including initial documentation.
 
-## What's Changed
+## Added
 * Initial yaml file including Subscription Status API by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/6
 * Add test file by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/9
-* Remove AUTHENTICATION_REQUIRED error code by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
-* Update x-correlator format by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
 * Add text on undocumented errors to OAS definition by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
 
+## Removed
+* Remove AUTHENTICATION_REQUIRED error code by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
+
+## Changed
+* Update x-correlator format by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
