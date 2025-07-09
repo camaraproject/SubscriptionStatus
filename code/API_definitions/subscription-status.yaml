@@ -107,7 +107,7 @@ paths:
           description: Subscription status retrieved successfully
           headers:
             x-correlator:
-              $ref: "#/components/headers/X-Correlator"
+              $ref: "#/components/headers/x-correlator"
           content:
             application/json:
               schema:
@@ -134,18 +134,17 @@ components:
       in: header
       description: Correlation ID for cross-service tracking
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
-        example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+        $ref: "#/components/schemas/XCorrelator"
   headers:
-    X-Correlator:
+    x-correlator:
       description: Correlation id for the different services
-      required: false
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
-        example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+        $ref: "#/components/schemas/XCorrelator"
   schemas:
+    XCorrelator:
+      type: string
+      pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
+      example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
     SubscriptionStatusRequest:
       type: object
       properties:
@@ -196,7 +195,7 @@ components:
       description: Bad Request
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -222,7 +221,7 @@ components:
       description: Unauthorized
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -248,7 +247,7 @@ components:
       description: Forbidden
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -281,7 +280,7 @@ components:
       description: Not found
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -307,7 +306,7 @@ components:
       description: Unprocessable Content
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
