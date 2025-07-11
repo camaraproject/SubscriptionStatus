@@ -2,7 +2,7 @@ Feature: CAMARA SubscriptionStatus API, v0.1-rc.1 - Retrieve subscription status
 
 
 Background: Common setup
-    Given the endpoint "{apiRoot}/subscription-status/v0.1rc1/retrive-subscription-status"
+    Given the resource "/subscription-status/v0.1rc1/retrieve-subscription-status"
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" is set to a UUID value
