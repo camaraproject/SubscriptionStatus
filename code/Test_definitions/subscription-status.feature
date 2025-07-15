@@ -1,4 +1,4 @@
-Feature: CAMARA SubscriptionStatus API, v0.1-rc.1 - Retrieve subscription status of a phone number
+Feature: CAMARA SubscriptionStatus API, v0.1.0-rc.1 - Retrieve subscription status of a phone number
 
 
 Background: Common setup
