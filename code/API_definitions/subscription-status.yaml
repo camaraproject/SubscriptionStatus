@@ -92,6 +92,8 @@ paths:
             - subscription-status:retrive-subscription-status
       tags:
         - Retrive Subscription Status
+      description: |
+        Oobtain the business subscription status of the provided phone number, including Voice/SMS inbound, Voice/SMS outbound, and data service status.
       operationId: retriveSubscriptionStatus
       summary: Retrieve subscription status of a phone number
       parameters:
