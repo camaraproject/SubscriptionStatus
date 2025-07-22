@@ -63,14 +63,22 @@ info:
     Please refer to the `CAMARA_common.yaml` of the Commonalities Release associated to this API version for a complete list of error responses. The applicable Commonalities Release can be identified in the `API Readiness Checklist` document associated to this API version.
     As a specific rule, error `501 - NOT_IMPLEMENTED` can be only a possible error response if it is explicitly documented in the API.
 
-  version: wip
+    # Authorization and authentication
+    The "Camara Security and Interoperability Profile" provides details of how an API consumer requests an access token. Please refer to Identity and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the released version of the profile.
+    The specific authorization flows to be used will be agreed upon during the onboarding process, happening between the API consumer and the API provider, taking into account the declared purpose for accessing the API, whilst also being subject to the prevailing legal framework dictated by local legislation.
+    In cases where personal data is processed by the API and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of three-legged access tokens is mandatory. This ensures that the API remains in compliance with privacy regulations, upholding the principles of transparency and user-centric privacy-by-design.
+
+  version: 0.1.0-rc.1
+
   x-camara-commonalities: 0.6
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-
+externalDocs:
+  description: Product documentation at CAMARA
+  url: https://github.com/camaraproject/SubscriptionStatus
 servers:
-  - url: "{apiRoot}/subscription-status/wip"
+  - url: "{apiRoot}/subscription-status/v0.1rc1"
     variables:
       apiRoot:
         default: http://localhost:9091
@@ -84,6 +92,8 @@ paths:
             - subscription-status:retrive-subscription-status
       tags:
         - Retrive Subscription Status
+      description: |
+        Obtain the business subscription status of the provided phone number, including Voice/SMS inbound, Voice/SMS outbound, and data service status.
       operationId: retriveSubscriptionStatus
       summary: Retrieve subscription status of a phone number
       parameters:
@@ -105,7 +115,7 @@ paths:
           description: Subscription status retrieved successfully
           headers:
             x-correlator:
-              $ref: "#/components/headers/X-Correlator"
+              $ref: "#/components/headers/x-correlator"
           content:
             application/json:
               schema:
@@ -132,18 +142,17 @@ components:
       in: header
       description: Correlation ID for cross-service tracking
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
-        example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+        $ref: "#/components/schemas/XCorrelator"
   headers:
-    X-Correlator:
+    x-correlator:
       description: Correlation id for the different services
-      required: false
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
-        example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+        $ref: "#/components/schemas/XCorrelator"
   schemas:
+    XCorrelator:
+      type: string
+      pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
+      example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
     SubscriptionStatusRequest:
       type: object
       properties:
@@ -194,7 +203,7 @@ components:
       description: Bad Request
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -220,7 +229,7 @@ components:
       description: Unauthorized
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -246,7 +255,7 @@ components:
       description: Forbidden
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -261,8 +270,6 @@ components:
                     enum:
                       - PERMISSION_DENIED
                       - INVALID_TOKEN_CONTEXT
-                      - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED
-                      - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
           examples:
             GENERIC_403_PERMISSION_DENIED:
               description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
@@ -276,24 +283,12 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 message: "phoneNumber is not consistent with access token."
-            KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED:
-              description: The idDocument is required by the implementation
-              value:
-                status: 403
-                code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED
-                message: The idDocument is required to perform the properties validation
-            KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH:
-              description: idDocument mismatch
-              value:
-                status: 403
-                code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
-                message: The idDocument needs to match the one associated with the provided phoneNumber
 
     Generic404:
       description: Not found
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -319,7 +314,7 @@ components:
       description: Unprocessable Content
       headers:
         x-correlator:
-          $ref: "#/components/headers/X-Correlator"
+          $ref: "#/components/headers/x-correlator"
       content:
         application/json:
           schema:
@@ -354,6 +349,3 @@ components:
                 status: 422
                 code: UNNECESSARY_IDENTIFIER
                 message: An explicit phone number has been provided when one is already associated with the access token
-externalDocs:
-  description: Camara Project Documentation
-  url: https://github.com/camaraproject/SubscriptionStatus
