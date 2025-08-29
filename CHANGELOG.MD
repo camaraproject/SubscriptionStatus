@@ -29,9 +29,6 @@ The API definition(s) are based on
 
 ## subscription-status v0.1.0
 
-**subscription-status v0.1.0 is the first public version for v0.1.0 of the Subscription Status API.
-
-
  API definition **with inline documentation**:
 [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)
 [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
