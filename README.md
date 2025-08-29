@@ -23,22 +23,11 @@ Sandbox API Repository to describe, develop, document, and test the Subscription
 
 ## Release Information
 
-The repository has no (pre)releases yet, work in progress is within the main branch.
-<!-- Optional: an explicit listing of the latest (pre-)release with additional information, e.g. links to the API definitions -->
-<!-- In addition use/uncomment one or multiple the following alternative options when becoming applicable -->
-<!-- Pre-releases of this sub project are available in https://github.com/camaraproject/SubscriptionStatus/releases -->
-<!-- The latest public release is available here: https://github.com/camaraproject/SubscriptionStatus/releases/latest -->
-<!-- For changes see [CHANGELOG.md](https://github.com/camaraproject/SubscriptionStatus/blob/main/CHANGELOG.md) -->
-
-
-* Note: Please be aware that the project will have updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-
- * Pre-release r1.1 with version 0.1.0-rc.1 of the API subscription-status is available [here](https://github.com/camaraproject/SubscriptionStatus/tree/r1.1).
- 
- <br>This is a release candidate version of the API. Until the public release there are bug fixes to be expected. The release candidate is suitable for implementors, but it is not recommended to use the API with customers in productive environments.
-  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.1/code/API_definitions/subscription-status.yaml)
-  [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
-  [[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
+ * **NEW**: Public release [r1.2](https://github.com/camaraproject/SubscriptionStatus/releases/tag/r1.2) with subscription-status v0.1.0 is now available.
+  * API definition **with inline documentation**:
+  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)
+  [[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
+  [[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/SubscriptionStatus/blob/main/CHANGELOG.md)
 
