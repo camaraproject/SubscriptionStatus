@@ -68,4 +68,3 @@ Feature: CAMARA SubscriptionStatus API, v0.1.0 - Retrieve subscription status of
     When the HTTP "POST" request is sent
     Then the response status code is 422
     And the response contains error code "SERVICE_NOT_APPLICABLE"
-
