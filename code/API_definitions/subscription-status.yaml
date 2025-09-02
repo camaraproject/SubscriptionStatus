@@ -194,10 +194,10 @@ components:
           description: HTTP response status code
         code:
           type: string
-          description: Code given to this error
+          description: A human-readable code to describe the error
         message:
           type: string
-          description: Detailed error description
+          description: A human-readable description of what the event represents
   responses:
     Generic400:
       description: Bad Request
@@ -349,3 +349,4 @@ components:
                 status: 422
                 code: UNNECESSARY_IDENTIFIER
                 message: An explicit phone number has been provided when one is already associated with the access token
+
