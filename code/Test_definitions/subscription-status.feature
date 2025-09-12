@@ -1,7 +1,8 @@
 Feature: CAMARA SubscriptionStatus API, v0.1.0 - Retrieve subscription status of a phone number
 
   Background: Common setup
-    Given the resource "/subscription-status/v0.1/retrieve-subscription-status"
+    Given an environment at "apiRoot"
+    And the resource "/subscription-status/v0.1/retrieve-subscription-status"
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
@@ -68,3 +69,4 @@ Feature: CAMARA SubscriptionStatus API, v0.1.0 - Retrieve subscription status of
     When the HTTP "POST" request is sent
     Then the response status code is 422
     And the response contains error code "SERVICE_NOT_APPLICABLE"
+
