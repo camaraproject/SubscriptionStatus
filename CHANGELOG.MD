@@ -19,7 +19,7 @@ The below sections record the changes for each API version in each release as fo
 ## Release Notes
 
 
-This release contains the definition and documentation of
+This public release contains the definition and documentation of
 * subscription-status v0.1.0
 
 The API definition(s) are based on
@@ -31,8 +31,8 @@ The API definition(s) are based on
 
  API definition **with inline documentation**:
 [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)
-[[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
-[[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
+[[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.bgithub.xyz/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
+[[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.bgithub.xyz/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
 
 **Initial contribution of API definitions for Subscription Status**, including initial documentation.
 
@@ -70,8 +70,8 @@ The API definition(s) are based on
 
  API definition **with inline documentation**:
 [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.1/code/API_definitions/subscription-status.yaml)
-[[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
-[[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
+[[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.bgithub.xyz/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml&nocors)
+[[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.bgithub.xyz/camaraproject/SubscriptionStatus/r1.1/code/API_definitions/subscription-status.yaml)
 
 **Initial contribution of API definitions for Subscription Status**, including initial documentation.
 
