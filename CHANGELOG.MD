@@ -1,7 +1,8 @@
 # Changelog Subscription Status
 
 ## Table of Contents
-- **[r1.1](#r11)**
+- **[r1.2](#r12)**
+- [r1.1](#r11)
 
 **Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until it has been released. For example, changes may be reverted before a release is published. For the best results, use the latest published release.**
 
@@ -12,6 +13,41 @@ The below sections record the changes for each API version in each release as fo
 * for subsequent release-candidate(s), only the delta to the previous release-candidate
 * for a public release, the consolidated changes since the previous public release
 
+
+# r1.2
+
+## Release Notes
+
+
+This public release contains the definition and documentation of
+* subscription-status v0.1.0
+
+The API definition(s) are based on
+* Commonalities [r3.3](https://github.com/camaraproject/Commonalities/releases/tag/r3.3)
+* Identity and Consent Management [r3.3](https://github.com/camaraproject/IdentityAndConsentManagement/releases/tag/r3.3)
+
+
+## subscription-status v0.1.0
+
+ API definition **with inline documentation**:
+[[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)
+[[View it on ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
+[[View it on Swagger Editor]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
+
+**Initial contribution of API definitions for Subscription Status**, including initial documentation.
+
+## Added
+* Initial yaml file including Subscription Status API by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/6
+* Add test file by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/9
+* Add text on undocumented errors to OAS definition by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
+
+## Removed
+* Remove AUTHENTICATION_REQUIRED error code by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
+
+## Changed
+* Update x-correlator format by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/13
+
+**Full Changelog**: https://github.com/camaraproject/SubscriptionStatus/commits/r1.2
 
 # r1.1
 
