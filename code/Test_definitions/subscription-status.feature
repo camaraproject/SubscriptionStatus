@@ -69,3 +69,11 @@ Feature: CAMARA SubscriptionStatus API, vwip - Retrieve subscription status of a
     When the HTTP "POST" request is sent
     Then the response status code is 422
     And the response contains error code "SERVICE_NOT_APPLICABLE"
+
+  @subscriptionStatus_8_unnecessary_phone_number
+  Scenario: Error when phone number is unnecessarily provided
+    Given an access token identifying a phone number
+    And a valid request body with phone number
+    When the HTTP "POST" request is sent
+    Then the response status code is 422
+    And the response contains error code "UNNECESSARY_IDENTIFIER"
