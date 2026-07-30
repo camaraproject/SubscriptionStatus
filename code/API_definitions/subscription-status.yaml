@@ -54,7 +54,7 @@ info:
     - When the API is invoked using a two-legged access token, the subject will be identified from the optional `phoneNumber` field, which therefore MUST be provided.
     - When a three-legged access token is used however, this optional identifier MUST NOT be provided, as the subject will be uniquely identified from the access token.
 
-    This approach simplifies API usage for API consumers using a three-legged access token to invoke the API by relying on the information associated with the access token that was identified during the authentication process.
+    This approach simplifies API usage for API consumers using a three-legged access token to invoke the API by relying on the information that is associated with the access token and was identified during the authentication process.
 
     ## Error handling:
 
@@ -81,8 +81,11 @@ info:
 
     <!-- CAMARA:MANDATORY:authorization-and-authentication:BEGIN -->
     # Authorization and authentication
+
     The "Camara Security and Interoperability Profile" provides details of how an API consumer requests an access token. Please refer to Identity and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the released version of the profile.
+
     The specific authorization flows to be used will be agreed upon during the onboarding process, happening between the API consumer and the API provider, taking into account the declared purpose for accessing the API, whilst also being subject to the prevailing legal framework dictated by local legislation.
+
     In cases where personal data is processed by the API and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of three-legged access tokens is mandatory. This ensures that the API remains in compliance with privacy regulations, upholding the principles of transparency and user-centric privacy-by-design.
     <!-- CAMARA:MANDATORY:authorization-and-authentication:END -->
 
@@ -100,7 +103,7 @@ servers:
     variables:
       apiRoot:
         default: http://localhost:9091
-        description: API root defined by the provider (e.g., `api.example.com`).
+        description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`
 
 tags:
   - name: Retrieve Subscription Status
@@ -164,8 +167,6 @@ components:
     x-correlator:
       $ref: "../common/CAMARA_common.yaml#/components/headers/x-correlator"
   schemas:
-    XCorrelator:
-      $ref: "../common/CAMARA_common.yaml#/components/schemas/XCorrelator"
     SubscriptionStatusRequest:
       type: object
       description: Request payload used to retrieve the subscription status of a phone number.
