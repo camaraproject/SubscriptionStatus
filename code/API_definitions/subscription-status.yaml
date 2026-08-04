@@ -88,27 +88,23 @@ info:
 
     In cases where personal data is processed by the API and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of three-legged access tokens is mandatory. This ensures that the API remains in compliance with privacy regulations, upholding the principles of transparency and user-centric privacy-by-design.
     <!-- CAMARA:MANDATORY:authorization-and-authentication:END -->
-
-  version: wip
-
+  version: 0.2.0-rc.1
   x-camara-commonalities: 0.8.0
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-externalDocs:
-  description: Product documentation at CAMARA
-  url: https://github.com/camaraproject/SubscriptionStatus
 servers:
-  - url: "{apiRoot}/subscription-status/vwip"
+  - url: '{apiRoot}/subscription-status/v0.2rc1'
     variables:
       apiRoot:
         default: http://localhost:9091
         description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`
-
 tags:
   - name: Retrieve Subscription Status
     description: Operations to retrieve the business subscription status of a phone number.
-
+externalDocs:
+  description: Product documentation at CAMARA
+  url: https://github.com/camaraproject/SubscriptionStatus
 paths:
   /retrieve-subscription-status:
     post:
@@ -122,50 +118,57 @@ paths:
       operationId: retrieveSubscriptionStatus
       summary: Retrieve subscription status of a phone number
       parameters:
-        - $ref: "#/components/parameters/x-correlator"
+        - $ref: '#/components/parameters/x-correlator'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/SubscriptionStatusRequest"
+              $ref: '#/components/schemas/SubscriptionStatusRequest'
             examples:
               Three-Legged Access Token Example:
                 value: {}
               Two-Legged Access Token Example:
                 value:
-                  phoneNumber: "+346661113334"
+                  phoneNumber: '+346661113334'
       responses:
-        "200":
+        '200':
           description: Subscription status retrieved successfully
           headers:
             x-correlator:
-              $ref: "#/components/headers/x-correlator"
+              $ref: '#/components/headers/x-correlator'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SubscriptionStatusResponse"
-        "400":
-          $ref: "#/components/responses/Generic400"
-        "401":
-          $ref: "#/components/responses/Generic401"
-        "403":
-          $ref: "#/components/responses/Generic403"
-        "404":
-          $ref: "#/components/responses/Generic404"
-        "422":
-          $ref: "#/components/responses/Generic422"
-
+                $ref: '#/components/schemas/SubscriptionStatusResponse'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/Generic403'
+        '404':
+          $ref: '#/components/responses/Generic404'
+        '422':
+          $ref: '#/components/responses/Generic422'
 components:
   securitySchemes:
     openId:
-      $ref: "../common/CAMARA_common.yaml#/components/securitySchemes/openId"
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+      description: OpenID Connect authentication via discovery metadata.
   parameters:
     x-correlator:
-      $ref: "../common/CAMARA_common.yaml#/components/parameters/x-correlator"
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        $ref: '#/components/schemas/XCorrelator'
   headers:
     x-correlator:
-      $ref: "../common/CAMARA_common.yaml#/components/headers/x-correlator"
+      description: Correlation id for the different services
+      schema:
+        $ref: '#/components/schemas/XCorrelator'
   schemas:
     SubscriptionStatusRequest:
       type: object
@@ -173,7 +176,7 @@ components:
       additionalProperties: false
       properties:
         phoneNumber:
-          $ref: "#/components/schemas/PhoneNumber"
+          $ref: '#/components/schemas/PhoneNumber'
     SubscriptionStatusResponse:
       type: object
       description: Current subscription status for inbound voice/SMS, outbound voice/SMS, and data service.
@@ -185,34 +188,71 @@ components:
       properties:
         voiceSmsIn:
           type: string
-          enum: [active, suspended]
+          enum:
+            - active
+            - suspended
           maxLength: 9
           description: Status of inbound Voice/SMS services
         voiceSmsOut:
           type: string
-          enum: [active, suspended]
+          enum:
+            - active
+            - suspended
           maxLength: 9
           description: Status of outbound Voice/SMS services
         dataService:
           type: string
-          enum: [active, suspended, throttled]
+          enum:
+            - active
+            - suspended
+            - throttled
           maxLength: 9
           description: Status of mobile data service
     PhoneNumber:
-      $ref: "../common/CAMARA_common.yaml#/components/schemas/PhoneNumber"
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      maxLength: 16
+      example: '+123456789'
     ErrorInfo:
-      $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
+      type: object
+      description: A structured error response providing details about a failed request, including the HTTP status code, an error code, and a human-readable message
+      required:
+        - status
+        - code
+        - message
+      properties:
+        status:
+          type: integer
+          format: int32
+          minimum: 100
+          maximum: 599
+          description: HTTP response status code
+        code:
+          type: string
+          maxLength: 96
+          description: A human-readable code to describe the error
+        message:
+          type: string
+          maxLength: 512
+          description: A human-readable description of what the event represents
+    XCorrelator:
+      type: string
+      description: Correlator string, UUID format recommended but any string matching the pattern can be used
+      pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
+      maxLength: 256
+      example: b4333c46-49c0-4f62-80d7-f0ef930f1c46
   responses:
     Generic400:
       description: Bad Request
       headers:
         x-correlator:
-          $ref: "#/components/headers/x-correlator"
+          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: '#/components/schemas/ErrorInfo'
               - type: object
                 properties:
                   status:
@@ -228,17 +268,16 @@ components:
                 status: 400
                 code: INVALID_ARGUMENT
                 message: Client specified an invalid argument, request body or query param.
-
     Generic401:
       description: Unauthorized
       headers:
         x-correlator:
-          $ref: "#/components/headers/x-correlator"
+          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: '#/components/schemas/ErrorInfo'
               - type: object
                 properties:
                   status:
@@ -254,17 +293,16 @@ components:
                 status: 401
                 code: UNAUTHENTICATED
                 message: Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.
-
     Generic403:
       description: Forbidden
       headers:
         x-correlator:
-          $ref: "#/components/headers/x-correlator"
+          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: '#/components/schemas/ErrorInfo'
               - type: object
                 properties:
                   status:
@@ -280,17 +318,16 @@ components:
                 status: 403
                 code: PERMISSION_DENIED
                 message: Client does not have sufficient permissions to perform this action.
-
     Generic404:
       description: Not found
       headers:
         x-correlator:
-          $ref: "#/components/headers/x-correlator"
+          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: '#/components/schemas/ErrorInfo'
               - type: object
                 properties:
                   status:
@@ -306,17 +343,16 @@ components:
                 status: 404
                 code: IDENTIFIER_NOT_FOUND
                 message: The phone number provided is not associated with a customer account
-
     Generic422:
       description: Unprocessable Content
       headers:
         x-correlator:
-          $ref: "#/components/headers/x-correlator"
+          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: '#/components/schemas/ErrorInfo'
               - type: object
                 properties:
                   status:

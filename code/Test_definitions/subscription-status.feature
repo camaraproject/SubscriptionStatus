@@ -1,8 +1,8 @@
-Feature: CAMARA SubscriptionStatus API, vwip - Retrieve subscription status of a phone number
+Feature: CAMARA SubscriptionStatus API, v0.2.0-rc.1 - Retrieve subscription status of a phone number
 
   Background: Common setup
     Given an environment at "apiRoot"
-    And the resource "/subscription-status/vwip/retrieve-subscription-status"
+    And the resource "/subscription-status/v0.2rc1/retrieve-subscription-status"
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
