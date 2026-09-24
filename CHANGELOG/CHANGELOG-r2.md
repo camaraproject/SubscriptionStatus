@@ -65,23 +65,28 @@ Changes documented below are compared to version 0.1.0.
 
 ### Breaking changes
 
-* N/A
+* Renamed the endpoint path from `/retrive-subscription-status` to `/retrieve-subscription-status`, including the corresponding OAuth2 scope `subscription-status:retrieve-subscription-status`, tag and `operationId` (typo fix with impact on API consumers) by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
+* Aligned the phone number identification behaviour with the CAMARA guidelines: when a three-legged access token is used, the optional `phoneNumber` MUST NOT be provided in the request body; if it is provided anyway, the server now responds with `422 UNNECESSARY_IDENTIFIER` instead of `403 INVALID_TOKEN_CONTEXT` by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
 
 ### Added
 
-* N/A
+* Added a test scenario for the `422 UNNECESSARY_IDENTIFIER` error when a phone number is unnecessarily provided with a three-legged access token by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
 
 ### Changed
 
-* N/A
+* Renamed the endpoint path from `/retrive-subscription-status` to `/retrieve-subscription-status`, including the corresponding OAuth2 scope, tag and `operationId` by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
+* Aligned the phone number identification behaviour with the CAMARA guidelines: when a three-legged access token is used, the optional `phoneNumber` MUST NOT be provided in the request body; if it is provided anyway, the server now responds with `422 UNNECESSARY_IDENTIFIER` by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
+* Aligned the API definition with Commonalities r4.3 and ICM r4.2 requirements for the Sync26 meta-release: `x-camara-commonalities` updated to `0.8.0`, common schemas (`PhoneNumber`, `ErrorInfo`, `x-correlator`, `securitySchemes`) now referenced from `CAMARA_common.yaml`, mandatory documentation sections marked with `CAMARA:MANDATORY` markers by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
+* Request bodies with undeclared properties are now rejected with `400 INVALID_ARGUMENT` (`additionalProperties: false` on request and response schemas) by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
+* Updated the error catalogue: removed the `403 INVALID_TOKEN_CONTEXT` error response and updated the `422 UNNECESSARY_IDENTIFIER` example description by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
 
 ### Fixed
 
-* N/A
+* Fixed the typo in the endpoint path, OAuth2 scope, tag and `operationId` (`retrive` -> `retrieve`) by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
 
 ### Removed
 
-* N/A
+* Removed the `403 INVALID_TOKEN_CONTEXT` error response from the API definition, following the alignment with the CAMARA phone number identification guidelines by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/36
 
 **Full Changelog**: https://github.com/camaraproject/SubscriptionStatus/compare/r1.2...r2.1
 
