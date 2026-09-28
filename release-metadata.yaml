@@ -2,7 +2,7 @@ repository:
   repository_name: SubscriptionStatus
   release_tag: r2.1
   release_type: pre-release-rc
-  release_date: null
+  release_date: '2026-09-28T08:08:35Z'
   src_commit_sha: 9adaaa9a815eb8ce3b58c5281a013361b4da2ad9
 apis:
 - api_name: subscription-status
