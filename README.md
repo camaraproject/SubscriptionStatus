@@ -29,14 +29,20 @@ Sandbox API Repository to describe, develop, document, and test the Subscription
 > [!NOTE]
 > Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
 
-* **NEW**: The latest public release is [r1.2](https://github.com/camaraproject/SubscriptionStatus/releases/tag/r1.2) (Fall25), with the following API versions:
-  * **subscription-status v0.1.0**
-  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)
-  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)
-  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
+* The latest public release is [r1.2](https://github.com/camaraproject/SubscriptionStatus/releases/tag/r1.2), with the following API versions:
+  * **subscription-status 0.1.0**
+  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r1.2/code/API_definitions/subscription-status.yaml)  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml&nocors)  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r1.2/code/API_definitions/subscription-status.yaml)
+
 * The latest public release is always available here: https://github.com/camaraproject/SubscriptionStatus/releases/latest
 * Other releases of this repository are available in https://github.com/camaraproject/SubscriptionStatus/releases
-* For changes see [CHANGELOG.md](https://github.com/camaraproject/SubscriptionStatus/blob/main/CHANGELOG.md)
+* For changes see [CHANGELOG](https://github.com/camaraproject/SubscriptionStatus/tree/main/CHANGELOG)
+
+### Upcoming Release Preview
+
+* Pre-release: [r2.1](https://github.com/camaraproject/SubscriptionStatus/releases/tag/r2.1) (release candidate)
+  * **subscription-status 0.2.0-rc.1**
+  [[YAML]](https://github.com/camaraproject/SubscriptionStatus/blob/r2.1/code/API_definitions/subscription-status.yaml)  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r2.1/code/API_definitions/subscription-status.yaml&nocors)  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/SubscriptionStatus/r2.1/code/API_definitions/subscription-status.yaml)
+
 
 _The above section is automatically synchronized by CAMARA project-administration._
 <!-- CAMARA:RELEASE-INFO:END -->
