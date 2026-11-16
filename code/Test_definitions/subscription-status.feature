@@ -1,4 +1,4 @@
-Feature: CAMARA Subscription Status API, vwip - Operation retrieveSubscriptionStatus
+Feature: CAMARA Subscription Status API, v0.2.0-rc.2 - Operation retrieveSubscriptionStatus
 
   # Input to be provided by the implementation to the tester
   #
@@ -17,7 +17,7 @@ Feature: CAMARA Subscription Status API, vwip - Operation retrieveSubscriptionSt
 
   Background: Common setup
     Given an environment at "apiRoot"
-    And the resource "/subscription-status/vwip/retrieve-subscription-status"
+    And the resource "/subscription-status/v0.2rc2/retrieve-subscription-status"
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
