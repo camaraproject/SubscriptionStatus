@@ -63,15 +63,17 @@ Changes documented below are compared to version 0.2.0-rc.1.
 
 ### Added
 
-* N/A
+* Added the `429 TOO_MANY_REQUESTS` error response to the API definition by referencing `TooManyRequests429` from Commonalities r4.4 by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/51
+* Extended the test plan to 18 scenarios: happy-path scenarios for each subscription state (all services active, Voice/SMS inbound suspended, Voice/SMS outbound suspended, data service suspended, data service throttled, and two services suspended at the same time), a scenario where the subject is identified by the access token, the common phoneNumber error scenarios from the Commonalities `C02` template, three separate 401 scenarios (no `Authorization` header, expired access token, invalid access token), scenarios for the 403, 429 and undeclared-property errors, and `Content-Type` / `x-correlator` response header assertions in every scenario by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/51
 
 ### Changed
 
-* N/A
+* Aligned the API definition with Commonalities r4.4: `x-camara-commonalities` updated to `0.9.0`, the mandatory `info.description` templates re-copied from `code/common/info-description-templates.yaml`, and the local `Generic400/401/403/404/422` responses replaced by references to the r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`, `IdentifierNotFound404`, `PhoneNumberIdentifier422`); the local `components/responses` section and the unused `ErrorInfo` schema were removed. The API contract is unchanged by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/51
+* Improved the terminology for consistency with the other KYC APIs: "end user" instead of "user"/"subscriber", "mobile network operator" instead of "operator", "mobile subscription status" instead of "business subscription status", and "current mobile subscription status identified by a phone number" in the API description by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/51
 
 ### Fixed
 
-* N/A
+* Corrected the punctuation and spacing of the Customer Service Troubleshooting use case by @chinaunicomyangfan in https://github.com/camaraproject/SubscriptionStatus/pull/51
 
 ### Removed
 
